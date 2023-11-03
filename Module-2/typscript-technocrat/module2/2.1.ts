@@ -15,3 +15,13 @@ const kgToGm = (value: string | number) => {
 }
 const result1=kgToGm("1") as string
 const result2=kgToGm(1) as number
+type CustomType={
+    message:string
+}
+
+try{
+    
+}
+catch(error){
+    console.log((error as CustomType).message);
+}
