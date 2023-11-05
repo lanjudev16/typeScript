@@ -1,5 +1,21 @@
-const arrayNumbers:number[]=[1,2,3,4,5,6,7,8,9,10]
-const arrayNumberData:string[] = arrayNumbers.map((number)=>{
-    number.toString();
-})
-console.log(arrayNumber);
+// mapped types
+
+const arrOfNumbers: number[] = [1, 4, 5];
+
+const arrOfStrings: string[] = arrOfNumbers.map((number) =>
+  number.toString()
+);
+console.log(arrOfStrings);
+
+type AreaNumber={
+    height:string;
+    width:string
+}
+type AreaString<T>={
+    [index in keyof T]:T[index]
+}
+
+const area1:AreaString<{height:number,width:number}>={
+    height:100,
+    width:20
+}
